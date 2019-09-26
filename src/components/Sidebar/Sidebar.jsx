@@ -22,7 +22,7 @@ import {
     InputGroupText,
     InputGroup,
     Media,
-    NavabarBrand,
+    NavbarBrand,
     Navbar,
     NavItem,
     NavLink,
@@ -37,6 +37,7 @@ import {
 let ps;
 
 class Sidebar extends React.Component {
+
     state = {
         collapseOpen: false
     };
@@ -109,13 +110,13 @@ class Sidebar extends React.Component {
                     </button>
                     {/* {Brand} */}
                     {logo ? (
-                        <NavabarBrand className="pt-0" {...navbarBrandProps}>
+                        <NavbarBrand className="pt-0" {...navbarBrandProps}>
                             <img 
                                 alt={logo.imgAlt}
                                 className="navbar-brand-img"
                                 src={logo.imgSrc}
                             />
-                        </NavabarBrand>
+                        </NavbarBrand>
                     ) : null}
                     {/* {User} */}
                     <Nav className="align-items-center d-md-none">
@@ -186,7 +187,7 @@ class Sidebar extends React.Component {
                                         </Link>
                                     ) : (
                                         <a href={logo.outterLink}>
-                                            <img src={imgSrc} alt={imgAlt} />
+                                            <img src={logo.imgSrc} alt={logo.imgAlt} />
                                         </a>
                                     )}
                                     </Col>

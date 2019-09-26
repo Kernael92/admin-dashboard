@@ -1,10 +1,8 @@
 import React from 'react';
-import { React, Switch } from "react-router-dom";
-// reactstrap components
-import { Container } from "reactstrap";
+import { Route, Switch } from "react-router-dom";
 // core components
-import AdminNavbar from "components/Navbars/AdminNavbar.jsx";
-import Sidebar from "components/Sidebar/Sidebar.jsx";
+import AdminNavbar from "../components/Navbars/AdminNavbar.jsx";
+import Sidebar from "../components/Sidebar/Sidebar.jsx";
 
 import routes from "routes.js";
 
@@ -12,7 +10,7 @@ class Admin extends React.Component {
     componentDidUpdate(e) {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
-        this.refs.mainContent.crollTop = 0;
+        this.refs.mainContent.scrollTop = 0;
     }
     getRoutes = routes => {
         return routes.map((prop, key) => {

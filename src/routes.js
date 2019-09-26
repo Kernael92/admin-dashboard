@@ -5,42 +5,42 @@ let routes = [
         path: "/index",
         name: "Dashboard",
         icon: "ni ni-tv-2 text-primary",
-        component: "#",
+        component: "",
         layout: "/admin"
     },
     {
         path: "/content",
         name: "contents",
-        icon: "",
+        icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
     },
     {
         path: "/content/trainingMaterials",
         name: "Training Materials",
-        icon: "",
-        component: "#",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
         layout: "/admin"
     },
     {
         path: "/content/trainingMaterials/phishing",
         name: "Phishing",
-        icon: "",
-        component: "#",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
         layout: "/admin"
     },
     {
         path: "/content/timerDuration",
         name: "Timer Duration",
-        icon: "",
-        component: "#",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
         layout: "/admin"
     },
     {
         path: "/content/timerduration/5min",
         name: "5 min",
-        icon: "",
-        component: "#",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
         layout: "/admin"
     },
 ];
