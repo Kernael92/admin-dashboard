@@ -2,6 +2,17 @@ import React from 'react';
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
+    DropdownMenu,
+    DropdownItem,
+    UncontrolledDropdown,
+    DropdownToggle,
+    Form,
+    FormGroup,
+    InputGroupAddon,
+    InputGroupText,
+    Input,
+    InputGroup,
+    Media,
     UncontrolledCollapse,
     NavbarBrand,
     Navbar,
@@ -60,42 +71,36 @@ class AdminNavbar extends React.Component {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <span className="nav-link-inner--text">Content</span>
-                            <ul>
-                                <li>
-                                    <i className="books" />
-                                    <span>Training Materials</span>
-                                    <ul>
-                                        <li>
-                                            <NavLink className="nav-link-icon" to="#" tag={Link}>
-                                                <span className="nav-link-inner--text">Phishing</span>
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink className="nav-link-icon" to="#" tag={Link}>
-                                                <span className="nav-link-inner--text">Phishing</span>
-                                            </NavLink>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
+                        <UncontrolledDropdown nav>
+                            <DropdownToggle className="pr-0" nav>
+                                <Media className="align-items-center">
+                                    <span className="nav-link-inner--text">Content</span>
+                                </Media>
+                            </DropdownToggle>
+                            <DropdownMenu className="dropdown-menu-arrow" right>
+                                <DropdownToggle className="pr-0" nav>
+                                    <i className="ni ni-books" />
+                                    <span className="nav-link-inner--text">Training Materials</span>
+                                </DropdownToggle>
+                                <DropdownMenu className="dropdown-menu-arrow" right>
+                                <DropdownItem href="#" onClick={e => e.preventDefault()}>
+                                    <i className="ni ni-user-run" />
+                                    <span className="nav-link-inner--text">Phishing</span>
+                                </DropdownItem>
+                                </DropdownMenu>
+                                <DropdownToggle className="pr-0" nav>
                                     <i className="ni ni-time-alarm" />
-                                    <span>Timer Duration</span>
-                                    <ul>
-                                        <li>
-                                            <NavLink className="nav-link-icon" to="#" tag={Link}>
-                                                <span className="nav-link-inner--text">5 min</span>
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink className="nav-link-icon" to="#" tag={Link}>
-                                                <span className="nav-link-inner--text">10 min</span>
-                                            </NavLink>
-                                        </li>
-                                    </ul>
-                                </li>
-                                
-                            </ul>
+                                    <span className="nav-link-inner--text">Timer duration</span>
+                                </DropdownToggle>
+                                <DropdownMenu className="dropdown-menu-arrow" right>
+                                <DropdownItem href="#" onClick={e => e.preventDefault()}>
+                                    <i className="ni ni-user-run" />
+                                    <span className="nav-link-inner--text">5 min</span>
+                                </DropdownItem>
+                                </DropdownMenu>
+                                <DropdownItem divider/>   
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
                         </NavItem>
                     </Nav>
                 </UncontrolledCollapse>
