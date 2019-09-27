@@ -2,6 +2,8 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
+
+
 // reactstrap components
 import {
   Button,
@@ -92,7 +94,7 @@ class AdminNavbar extends React.Component {
                   <span className="navbar-toggler-bar bar3" />
                 </button>
               </div>
-              <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
+              <NavbarBrand href="#" onClick={e => e.preventDefault()}>
                 {this.props.brandText}
               </NavbarBrand>
             </div>
@@ -171,9 +173,9 @@ class AdminNavbar extends React.Component {
                     nav
                     onClick={e => e.preventDefault()}
                   >
-                    <div className="photo">
+                    {/* <div className="photo">
                       <img alt="..." src={require("assets/img/anime3.png")} />
-                    </div>
+                    </div> */}
                     <b className="caret d-none d-lg-block d-xl-block" />
                     <p className="d-lg-none">Log out</p>
                   </DropdownToggle>

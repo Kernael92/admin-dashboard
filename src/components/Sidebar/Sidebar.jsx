@@ -7,7 +7,16 @@ import { PropTypes } from "prop-types";
 import PerfectScrollbar from "perfect-scrollbar";
 
 // reactstrap components
-import { Nav } from "reactstrap";
+import { 
+  Nav,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownToggle, 
+  NavbarBrand,
+  Navbar,
+
+} from "reactstrap";
 
 var ps;
 
@@ -37,7 +46,7 @@ class Sidebar extends React.Component {
     document.documentElement.classList.remove("nav-open");
   };
   render() {
-    const { bgColor, routes, rtlActive, logo } = this.props;
+    const { bgColor, routes, logo } = this.props;
     let logoImg = null;
     let logoText = null;
     if (logo !== undefined) {
@@ -92,7 +101,7 @@ class Sidebar extends React.Component {
         <div className="sidebar-wrapper" ref="sidebar">
           {logoImg !== null || logoText !== null ? (
             <div className="logo">
-              {logoImg}
+              {/* {logoImg} */}
               {logoText}
             </div>
           ) : null}
@@ -114,6 +123,7 @@ class Sidebar extends React.Component {
                     onClick={this.props.toggleSidebar}
                   >
                     <i className={prop.icon} />
+                    <p >{prop.name}</p>
                   </NavLink>
                 </li>
               );
@@ -133,7 +143,6 @@ Sidebar.defaultProps = {
 Sidebar.propTypes = {
   // if true, then instead of the routes[i].name, routes[i].rtlName will be rendered
   // insde the links of this component
-  rtlActive: PropTypes.bool,
   bgColor: PropTypes.oneOf(["primary", "blue", "green"]),
   routes: PropTypes.arrayOf(PropTypes.object),
   logo: PropTypes.shape({

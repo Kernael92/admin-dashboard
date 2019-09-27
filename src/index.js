@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css'
-import Admin from "./layouts/Admin.jsx";
+import "assets/scss/black-dashboard-react.scss";
+import "assets/css/nucleo-icons.css";
+import "assets/css/black-dashboard.css";
+import Admin from "layouts/Admin.jsx";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 ReactDOM.render(

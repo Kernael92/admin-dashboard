@@ -9,36 +9,99 @@ let routes = [
         layout: "/admin"
     },
     {
-        path: "/content",
-        name: "contents",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/content/trainingMaterials",
+        path: "/trainingMaterials",
         name: "Training Materials",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
     },
     {
-        path: "/content/trainingMaterials/phishing",
+        path: "/phishing",
         name: "Phishing",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
     },
     {
-        path: "/content/timerDuration",
-        name: "Timer Duration",
+        path: "/social",
+        name: "Social Engineering",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
     },
     {
-        path: "/content/timerduration/5min",
-        name: "5 min",
+        path: "/malware",
+        name: "Malware",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/security",
+        name: "Physical security",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/remotely",
+        name: "Working remotely",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/mobileSecurity",
+        name: "MObile Security",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/browsing",
+        name: "Safe web browsing",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/timer",
+        name: "Duration Time",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/reports",
+        name: "Reports",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/pages",
+        name: "Pages",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/articles",
+        name: "Articles",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/settings",
+        name: "Settings",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/subscription",
+        name: "Subscription",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
