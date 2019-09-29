@@ -4,7 +4,9 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 // react fontawesome components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons'
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+// react-color picker components
+import { MaterialPicker } from 'react-color';
 
 class FixedPlugin extends Component {
   constructor(props) {

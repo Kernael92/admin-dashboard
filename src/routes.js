@@ -107,6 +107,55 @@ let routes = [
         layout: "/admin"
     },
     {
+        path: "/phishing",
+        name: "Phishing",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/social",
+        name: "Social Engineering",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/malware",
+        name: "Malware",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/security",
+        name: "Physical security",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/remotely",
+        name: "Working remotely",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/mobileSecurity",
+        name: "Mobile Security",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/browsing",
+        name: "Safe web browsing",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
         path: "/settings",
         name: "Settings",
         icon: "ni ni-tv-2 text-primary",
@@ -116,6 +165,34 @@ let routes = [
     {
         path: "/subscription",
         name: "Subscription",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/pages",
+        name: "Registration",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/pages",
+        name: "Login",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/pages",
+        name: "Settings",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/pages",
+        name: "Logout",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
