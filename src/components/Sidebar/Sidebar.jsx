@@ -164,7 +164,7 @@ class Sidebar extends React.Component {
               >
               <p>Content</p>
               </DropdownToggle>
-              <DropdownMenu className="dropdown-navbar" right tag="ul">
+              <DropdownMenu className="dropdown-menu" down tag="ul">
                 {content.map((prop, key) => {
                   if (prop.redirect) return null;
                   return (
@@ -183,7 +183,6 @@ class Sidebar extends React.Component {
                         tag="li"
                       >
                       <DropdownItem className="nav-item">
-                        
                         {prop.name}
                       </DropdownItem>    
                       </NavLink>
@@ -199,11 +198,10 @@ class Sidebar extends React.Component {
               data-toggle="dropdown"
               nav
               onClick={e => e.preventDefault}
-            >
-              
+            >  
               <p>Duration time</p>
             </DropdownToggle>
-            <DropdownMenu className="dropdown-navbar" down tag="ul">
+            <DropdownMenu className="dropdown-menu" down tag="ul">
               {timer.map((prop, key) => {
                 if (prop.redirect) return null;
                 return (
@@ -220,8 +218,7 @@ class Sidebar extends React.Component {
                       activeClassName="active"
                       onClick={this.props.toggleSidebar}
                     >
-                    <DropdownItem className="nav-item">
-                      
+                    <DropdownItem className="nav-item"> 
                      {prop.name}
                     </DropdownItem>    
                     </NavLink>
@@ -234,13 +231,13 @@ class Sidebar extends React.Component {
             <DropdownToggle 
               caret
               color="default"
-              data-toggle="dropright"
+              data-toggle="dropdown"
               nav
               onClick={e => e.preventDefault}
             >
             <p>Articles</p>
             </DropdownToggle>
-            <DropdownMenu className="dropdown-navbar" down tag="ul">
+            <DropdownMenu className="dropdown-menu" down tag="ul">
               {articles.map((prop, key) => {
                 if (prop.redirect) return null;
                 return (
@@ -258,7 +255,6 @@ class Sidebar extends React.Component {
                       onClick={this.props.toggleSidebar}
                     >
                     <DropdownItem className="nav-item">
-                      
                       {prop.name}
                     </DropdownItem>    
                     </NavLink>
@@ -276,7 +272,7 @@ class Sidebar extends React.Component {
               >
               <p>Pages</p>
               </DropdownToggle>
-              <DropdownMenu className="dropdown-navbar" down tag="ul">
+              <DropdownMenu className="dropdown-menu" down tag="ul">
                 {pages.map((prop, key) => {
                   if (prop.redirect) return null;
                   return (
