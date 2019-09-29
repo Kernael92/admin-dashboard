@@ -1,4 +1,5 @@
 import React from "react";
+import routes from "routes.js";
 import { NavLink, Link } from "react-router-dom";
 // nodejs library to set properties for components
 import { PropTypes } from "prop-types";
@@ -19,10 +20,17 @@ import {
 } from "reactstrap";
 
 var ps;
+let content = routes.slice(2, 9);
+let dashboard = routes.slice(0, 1);
+let timer = routes.slice(9, 12)
+
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      collapseOpen: false,
+    };
     this.activeRoute.bind(this);
   }
   // verifies if routeName is the one active (in browser input)
@@ -44,6 +52,21 @@ class Sidebar extends React.Component {
   }
   linkOnClick = () => {
     document.documentElement.classList.remove("nav-open");
+  };
+  // this function opens and closes the collapse on small devices
+  toggleCollapse = () => {
+    if (this.state.collapseOpen) {
+      this.setState({
+        color: "navbar-transparent"
+      });
+    } else {
+      this.setState({
+        color: "bg-blue"
+      });
+    }
+    this.setState({
+      collapseOpen: !this.state.collapseOpen
+    });
   };
   render() {
     const { bgColor, routes, logo } = this.props;
@@ -101,12 +124,12 @@ class Sidebar extends React.Component {
         <div className="sidebar-wrapper" ref="sidebar">
           {logoImg !== null || logoText !== null ? (
             <div className="logo">
-              {/* {logoImg} */}
+              {logoImg}
               {logoText}
             </div>
           ) : null}
-          <Nav>
-            {routes.map((prop, key) => {
+          <nav>
+            {dashboard.map((prop, key) => {
               if (prop.redirect) return null;
               return (
                 <li
@@ -128,7 +151,80 @@ class Sidebar extends React.Component {
                 </li>
               );
             })}
-          </Nav>
+            <UncontrolledDropdown >
+              <DropdownToggle 
+                caret
+                data-toggle="dropdown"
+                nav
+                onClick={e => e.preventDefault}
+              >
+              <p>Content</p>
+              </DropdownToggle>
+              <DropdownMenu className="dropdown-navbar" down tag="ul">
+                {content.map((prop, key) => {
+                  if (prop.redirect) return null;
+                  return (
+                    <li
+                      className={
+                        this.activeRoute(prop.path) +
+                        (prop.pro ? " active-pro" : "")
+                      }
+                      key={key}
+                    >
+                      <NavLink
+                        to={prop.layout + prop.path}
+                        className="nav-link"
+                        activeClassName="active"
+                        onClick={this.props.toggleSidebar}
+                      >
+                      <DropdownItem className="nav-item">
+                        
+                        {prop.name}
+                      </DropdownItem>    
+                      </NavLink>
+                    </li>
+                  );
+                })}
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <UncontrolledDropdown >
+            <DropdownToggle 
+              caret
+              color="default"
+              data-toggle="dropdown"
+              nav
+              onClick={e => e.preventDefault}
+            >
+            <p>Duration time</p>
+            </DropdownToggle>
+            <DropdownMenu className="dropdown-navbar" down tag="ul">
+              {timer.map((prop, key) => {
+                if (prop.redirect) return null;
+                return (
+                  <li
+                    className={
+                      this.activeRoute(prop.path) +
+                      (prop.pro ? " active-pro" : "")
+                    }
+                    key={key}
+                  >
+                    <NavLink
+                      to={prop.layout + prop.path}
+                      className="nav-link"
+                      activeClassName="active"
+                      onClick={this.props.toggleSidebar}
+                    >
+                    <DropdownItem className="nav-item">
+                      
+                      {prop.name}
+                    </DropdownItem>    
+                    </NavLink>
+                  </li>
+                );
+              })}
+            </DropdownMenu>
+            </UncontrolledDropdown>
+          </nav>
         </div>
       </div>
     );

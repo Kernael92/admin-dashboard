@@ -9,9 +9,14 @@ import Sidebar from "components/Sidebar/Sidebar.jsx";
 import routes from "routes.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
+import logo from '../logo.svg';
+
+
+
 
 
 var ps;
+let content = routes.slice(2,9);
 
 class Admin extends React.Component {
   constructor(props) {
@@ -58,8 +63,8 @@ class Admin extends React.Component {
     document.documentElement.classList.toggle("nav-open");
     this.setState({ sidebarOpened: !this.state.sidebarOpened });
   };
-  getRoutes = routes => {
-    return routes.map((prop, key) => {
+  getRoutes = content => {
+    return content.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
           <Route
@@ -97,7 +102,7 @@ class Admin extends React.Component {
             routes={routes}
             bgColor={this.state.backgroundColor}
             logo={{
-              
+              imgSrc: logo,
               text: "E-Phoenix",
               
             }}

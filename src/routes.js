@@ -52,7 +52,7 @@ let routes = [
     },
     {
         path: "/mobileSecurity",
-        name: "MObile Security",
+        name: "Mobile Security",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
@@ -66,7 +66,21 @@ let routes = [
     },
     {
         path: "/timer",
-        name: "Duration Time",
+        name: "5 min",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/timer",
+        name: "10 min",
+        icon: "ni ni-tv-2 text-primary",
+        component: "",
+        layout: "/admin"
+    },
+    {
+        path: "/timer",
+        name: "30 min",
         icon: "ni ni-tv-2 text-primary",
         component: "",
         layout: "/admin"
