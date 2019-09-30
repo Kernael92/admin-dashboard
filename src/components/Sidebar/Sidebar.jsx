@@ -132,7 +132,7 @@ class Sidebar extends React.Component {
               {logoText}
             </div>
           ) : null}
-          <nav className="nav">
+          <nav className="nav" navbar>
             {dashboard.map((prop, key) => {
               if (prop.redirect) return null;
               return (
@@ -149,22 +149,23 @@ class Sidebar extends React.Component {
                     activeClassName="active"
                     onClick={this.props.toggleSidebar}
                   >
-                    <i className={prop.icon} />
+                    <i className="tim-icons icon-chart-pie-36" />
                     <p >{prop.name}</p>
                   </NavLink>
                 </span>
               );
             })}
-            <UncontrolledDropdown >
+            <UncontrolledDropdown nav >
               <DropdownToggle 
-                caret
-                data-toggle="dropdown"
+                className="has-arrow"
+                data-toggle="collapse"
                 nav
                 onClick={e => e.preventDefault}
               >
+              <i className="tim-icons icon-components"></i>
               <p>Content</p>
               </DropdownToggle>
-              <DropdownMenu className="dropdown-menu" down tag="ul">
+              <DropdownMenu className="dropdown-navbar" right tag="ul">
                 {content.map((prop, key) => {
                   if (prop.redirect) return null;
                   return (
@@ -182,7 +183,7 @@ class Sidebar extends React.Component {
                         onClick={this.props.toggleSidebar}
                         tag="li"
                       >
-                      <DropdownItem className="nav-item">
+                      <DropdownItem className="nav-item ">
                         {prop.name}
                       </DropdownItem>    
                       </NavLink>
@@ -191,17 +192,18 @@ class Sidebar extends React.Component {
                 })}
               </DropdownMenu>
             </UncontrolledDropdown>
-            <UncontrolledDropdown >
+            <UncontrolledDropdown  nav>
             <DropdownToggle 
-              caret
+              className="has-arrow"
               color="default"
               data-toggle="dropdown"
               nav
               onClick={e => e.preventDefault}
-            >  
+            > 
+              <i className="tim-icons icon-time-alarm" />  
               <p>Duration time</p>
             </DropdownToggle>
-            <DropdownMenu className="dropdown-menu" down tag="ul">
+            <DropdownMenu className="dropdown-navbar" right tag="ul">
               {timer.map((prop, key) => {
                 if (prop.redirect) return null;
                 return (
@@ -227,17 +229,18 @@ class Sidebar extends React.Component {
               })}
             </DropdownMenu>
             </UncontrolledDropdown>
-            <UncontrolledDropdown >
+            <UncontrolledDropdown nav>
             <DropdownToggle 
-              caret
+              className="has-arrow"
               color="default"
               data-toggle="dropdown"
               nav
               onClick={e => e.preventDefault}
             >
+            <i className="tim-icons icon-single-copy-04"></i>
             <p>Articles</p>
             </DropdownToggle>
-            <DropdownMenu className="dropdown-menu" down tag="ul">
+            <DropdownMenu className="dropdown-navbar" right tag="ul">
               {articles.map((prop, key) => {
                 if (prop.redirect) return null;
                 return (
@@ -263,16 +266,17 @@ class Sidebar extends React.Component {
               })}
             </DropdownMenu>
             </UncontrolledDropdown>
-            <UncontrolledDropdown >
+            <UncontrolledDropdown nav>
               <DropdownToggle 
-                caret
+                className="has-arrow"
                 data-toggle="dropdown"
                 nav
                 onClick={e => e.preventDefault}
               >
+              <i className="tim-icons icon-single-02" />
               <p>Pages</p>
               </DropdownToggle>
-              <DropdownMenu className="dropdown-menu" down tag="ul">
+              <DropdownMenu className="dropdown-navbar" right tag="ul">
                 {pages.map((prop, key) => {
                   if (prop.redirect) return null;
                   return (
@@ -315,7 +319,7 @@ class Sidebar extends React.Component {
                     activeClassName="active"
                     onClick={this.props.toggleSidebar}
                   >
-                    <i className={prop.icon} />
+                    <i className= "tim-icons icon-chart-bar-32" />
                     <p >{prop.name}</p>
                   </NavLink>
                 </span>
@@ -337,7 +341,7 @@ class Sidebar extends React.Component {
                     activeClassName="active"
                     onClick={this.props.toggleSidebar}
                   >
-                    <i className={prop.icon} />
+                    <i className= "tim-icons icon-wallet-43"/>
                     <p >{prop.name}</p>
                   </NavLink>
                 </span>

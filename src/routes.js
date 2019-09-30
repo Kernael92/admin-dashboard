@@ -4,7 +4,7 @@ let routes = [
     {
         path: "/index",
         name: "Dashboard",
-        icon: "ni ni-tv-2 text-primary",
+        icon: "tim-icons icon-chart-pie-36",
         component: "",
         layout: "/admin"
     },
@@ -89,7 +89,7 @@ let routes = [
         path: "/reports",
         name: "Reports",
         icon: "ni ni-tv-2 text-primary",
-        component: "",
+        component: "tim-icons icon-chart-bar-32",
         layout: "/admin"
     },
     {
