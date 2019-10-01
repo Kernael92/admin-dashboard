@@ -130,14 +130,14 @@ class AdminNavbar extends React.Component {
                   <DropdownToggle
                     caret
                     color="default"
-                    data-toggle="dropdown"
+                    data-toggle="zoomIn"
                     nav
                   >
-                    <div className="notification d-none d-lg-block d-xl-block" />
+                    <div className="notification-author d-none d-lg-block d-xl-block" />
                     <i className="tim-icons icon-sound-wave" />
                     <p className="d-lg-none">Notifications</p>
                   </DropdownToggle>
-                  <DropdownMenu className="dropdown-navbar" right tag="ul">
+                  <DropdownMenu className="notification-author animated zoomIn " right tag="ul">
                     <NavLink tag="li">
                       <DropdownItem className="nav-item">
                         Mike John responded to your email
@@ -179,7 +179,7 @@ class AdminNavbar extends React.Component {
                     <b className="caret d-none d-lg-block d-xl-block" />
                     <p className="d-lg-none">Log out</p>
                   </DropdownToggle>
-                  <DropdownMenu className="dropdown-navbar" right tag="ul">
+                  <DropdownMenu className="dropdown-header-top animated zoomIn" right tag="ul">
                     <NavLink tag="li">
                       <DropdownItem className="nav-item">Profile</DropdownItem>
                     </NavLink>
