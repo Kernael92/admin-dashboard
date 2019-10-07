@@ -1,3 +1,13 @@
+import Dashboard from 'views/Dashboard.jsx';
+import Content from 'views/Content.jsx';
+import Articles from 'views/Articles.jsx';
+import Duration from 'views/Duration.jsx';
+import Pages from 'views/Pages.jsx';
+import Reports from 'views/Reports.jsx';
+import Subscription from 'views/Subscription.jsx';
+
+
+
 
 
 let routes = [
@@ -9,194 +19,48 @@ let routes = [
         layout: "/admin"
     },
     {
-        path: "/trainingMaterials",
-        name: "Training Materials",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
+        path: "/content",
+        name: "Content",
+        icon: "tim-icons icon-components",
+        component: "Content",
         layout: "/admin"
     },
     {
-        path: "/phishing",
-        name: "Phishing",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/social",
-        name: "Social Engineering",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/malware",
-        name: "Malware",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/security",
-        name: "Physical security",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/remotely",
-        name: "Working remotely",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/mobileSecurity",
-        name: "Mobile Security",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/browsing",
-        name: "Safe web browsing",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/timer",
-        name: "5 min",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/timer",
-        name: "10 min",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/timer",
-        name: "30 min",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/reports",
-        name: "Reports",
-        icon: "ni ni-tv-2 text-primary",
-        component: "tim-icons icon-chart-bar-32",
-        layout: "/admin"
-    },
-    {
-        path: "/pages",
-        name: "Pages",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
+        path: "/duration",
+        name: "Duration",
+        icon: "tim-icons icon-time-alarm",
+        component: "Duration",
         layout: "/admin"
     },
     {
         path: "/articles",
         name: "Articles",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
+        icon: "tim-icons icon-single-copy-04",
+        component: "Articles",
         layout: "/admin"
     },
     {
-        path: "/phishing",
-        name: "Phishing",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
+        path: "/pages",
+        name: "Pages",
+        icon: "tim-icons icon-single-02",
+        component: "Pages",
         layout: "/admin"
     },
     {
-        path: "/social",
-        name: "Social Engineering",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/malware",
-        name: "Malware",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/security",
-        name: "Physical security",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/remotely",
-        name: "Working remotely",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/mobileSecurity",
-        name: "Mobile Security",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/browsing",
-        name: "Safe web browsing",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/settings",
-        name: "Settings",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
+        path: "/reports",
+        name: "Reports",
+        icon: "tim-icons icon-chart-bar-32",
+        component: "Reports",
         layout: "/admin"
     },
     {
         path: "/subscription",
         name: "Subscription",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
+        icon: "tim-icons icon-wallet-43",
+        component: "Subscription",
         layout: "/admin"
     },
-    {
-        path: "/pages",
-        name: "Registration",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/pages",
-        name: "Login",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/pages",
-        name: "Settings",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
-    {
-        path: "/pages",
-        name: "Logout",
-        icon: "ni ni-tv-2 text-primary",
-        component: "",
-        layout: "/admin"
-    },
+
 ];
 
 export default routes;

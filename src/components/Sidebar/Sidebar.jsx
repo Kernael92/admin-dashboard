@@ -20,13 +20,7 @@ import {
 } from "reactstrap";
 
 var ps;
-let content = routes.slice(2, 9);
-let dashboard = routes.slice(0, 1);
-let timer = routes.slice(9, 12);
-let articles = routes.slice(15, 22);
-let reports = routes.slice(12, 13);
-let subscription = routes.slice(23, 24);
-let pages = routes.slice(24, 28);
+
 
 
 class Sidebar extends React.Component {
@@ -132,11 +126,11 @@ class Sidebar extends React.Component {
               {logoText}
             </div>
           ) : null}
-          <nav className="nav" navbar>
-            {dashboard.map((prop, key) => {
+          <Nav>
+            {routes.map((prop, key) => {
               if (prop.redirect) return null;
               return (
-                <span
+                <li
                   className={
                     this.activeRoute(prop.path) +
                     (prop.pro ? " active-pro" : "")
@@ -149,205 +143,13 @@ class Sidebar extends React.Component {
                     activeClassName="active"
                     onClick={this.props.toggleSidebar}
                   >
-                    <i className="tim-icons icon-chart-pie-36" />
-                    <p >{prop.name}</p>
+                    <i className={prop.icon} />
+                    <p>{prop.name}</p>
                   </NavLink>
-                </span>
+                </li>
               );
             })}
-            <UncontrolledDropdown nav >
-              <DropdownToggle 
-                className="has-arrow"
-                data-toggle="collapse"
-                nav
-                onClick={e => e.preventDefault}
-              >
-              <i className="tim-icons icon-components"></i>
-              <p>Content</p>
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-navbar" right tag="ul">
-                {content.map((prop, key) => {
-                  if (prop.redirect) return null;
-                  return (
-                    <li
-                      className={
-                        this.activeRoute(prop.path) +
-                        (prop.pro ? " active-pro" : "")
-                      }
-                      key={key}
-                    >
-                      <NavLink
-                        to={prop.layout + prop.path}
-                        className="nav-link"
-                        activeClassName="active"
-                        onClick={this.props.toggleSidebar}
-                        tag="li"
-                      >
-                      <DropdownItem className="nav-item ">
-                        {prop.name}
-                      </DropdownItem>    
-                      </NavLink>
-                    </li>
-                  );
-                })}
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown  nav>
-            <DropdownToggle 
-              className="has-arrow"
-              color="default"
-              data-toggle="dropdown"
-              nav
-              onClick={e => e.preventDefault}
-            > 
-              <i className="tim-icons icon-time-alarm" />  
-              <p>Duration time</p>
-            </DropdownToggle>
-            <DropdownMenu className="dropdown-navbar" right tag="ul">
-              {timer.map((prop, key) => {
-                if (prop.redirect) return null;
-                return (
-                  <li
-                    className={
-                      this.activeRoute(prop.path) +
-                      (prop.pro ? " active-pro" : "")
-                    }
-                    key={key}
-                  >
-                    <NavLink
-                      to={prop.layout + prop.path}
-                      className="nav-link"
-                      activeClassName="active"
-                      onClick={this.props.toggleSidebar}
-                    >
-                    <DropdownItem className="nav-item"> 
-                     {prop.name}
-                    </DropdownItem>    
-                    </NavLink>
-                  </li>
-                );
-              })}
-            </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown nav>
-            <DropdownToggle 
-              className="has-arrow"
-              color="default"
-              data-toggle="dropdown"
-              nav
-              onClick={e => e.preventDefault}
-            >
-            <i className="tim-icons icon-single-copy-04"></i>
-            <p>Articles</p>
-            </DropdownToggle>
-            <DropdownMenu className="dropdown-navbar" right tag="ul">
-              {articles.map((prop, key) => {
-                if (prop.redirect) return null;
-                return (
-                  <li
-                    className={
-                      this.activeRoute(prop.path) +
-                      (prop.pro ? " active-pro" : "")
-                    }
-                    key={key}
-                  >
-                    <NavLink
-                      to={prop.layout + prop.path}
-                      className="nav-link"
-                      activeClassName="active"
-                      onClick={this.props.toggleSidebar}
-                    >
-                    <DropdownItem className="nav-item">
-                      {prop.name}
-                    </DropdownItem>    
-                    </NavLink>
-                  </li>
-                );
-              })}
-            </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown nav>
-              <DropdownToggle 
-                className="has-arrow"
-                data-toggle="dropdown"
-                nav
-                onClick={e => e.preventDefault}
-              >
-              <i className="tim-icons icon-single-02" />
-              <p>Pages</p>
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-navbar" right tag="ul">
-                {pages.map((prop, key) => {
-                  if (prop.redirect) return null;
-                  return (
-                    <li
-                      className={
-                        this.activeRoute(prop.path) +
-                        (prop.pro ? " active-pro" : "")
-                      }
-                      key={key}
-                    >
-                      <NavLink
-                        to={prop.layout + prop.path}
-                        className="nav-link"
-                        activeClassName="active"
-                        onClick={this.props.toggleSidebar}
-                      >
-                      <DropdownItem className="nav-item">
-                        
-                        {prop.name}
-                      </DropdownItem>    
-                      </NavLink>
-                    </li>
-                  );
-                })}
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            {reports.map((prop, key) => {
-              if (prop.redirect) return null;
-              return (
-                <span
-                  className={
-                    this.activeRoute(prop.path) +
-                    (prop.pro ? " active-pro" : "")
-                  }
-                  key={key}
-                >
-                  <NavLink
-                    to={prop.layout + prop.path}
-                    className="nav-link"
-                    activeClassName="active"
-                    onClick={this.props.toggleSidebar}
-                  >
-                    <i className= "tim-icons icon-chart-bar-32" />
-                    <p >{prop.name}</p>
-                  </NavLink>
-                </span>
-              );
-            })}
-            {subscription.map((prop, key) => {
-              if (prop.redirect) return null;
-              return (
-                <span
-                  className={
-                    this.activeRoute(prop.path) +
-                    (prop.pro ? " active-pro" : "")
-                  }
-                  key={key}
-                >
-                  <NavLink
-                    to={prop.layout + prop.path}
-                    className="nav-link"
-                    activeClassName="active"
-                    onClick={this.props.toggleSidebar}
-                  >
-                    <i className= "tim-icons icon-wallet-43"/>
-                    <p >{prop.name}</p>
-                  </NavLink>
-                </span>
-              );
-            })}
-          </nav>
+          </Nav>
         </div>
       </div>
     );

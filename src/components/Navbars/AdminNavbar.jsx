@@ -140,7 +140,7 @@ class AdminNavbar extends React.Component {
                   <DropdownMenu className="notification-author animated zoomIn " right tag="ul">
                     <NavLink tag="li">
                       <DropdownItem className="nav-item">
-                        Mike John responded to your email
+                        John responded to your email
                       </DropdownItem>
                     </NavLink>
                     <NavLink tag="li">

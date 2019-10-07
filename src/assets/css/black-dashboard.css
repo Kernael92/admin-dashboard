@@ -8407,6 +8407,7 @@
     -ms-transition: all 150ms linear;
     transition: all 150ms linear;
     background-color: #1b2a47;
+    width: 230px;
    }
     .dropdown-menu.dropdown-menu-right:before, .dropdown-menu.dropdown-menu-right:after {
       left: auto;
