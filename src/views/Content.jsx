@@ -125,7 +125,7 @@ class Contents extends React.Component {
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Safe Web browsing</p>
+                                <p>Mobile Security</p>
                             </div>
                             </CardBody>
                         </Card>
