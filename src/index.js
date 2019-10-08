@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createBrowserHistory } from "history";
 // import './index.css';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
@@ -8,15 +9,17 @@ import "assets/scss/black-dashboard-react.scss";
 import "assets/css/nucleo-icons.css";
 import "assets/css/black-dashboard.css";
 import Admin from "layouts/Admin.jsx";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+
+const hist = createBrowserHistory();
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Router history={hist}>
         <Switch>
             <Route path="/admin" render={props => <Admin {...props} />} />
             <Redirect from="/" to="/admin/index" />
         </Switch>
-    </BrowserRouter>,
+    </Router>,
     document.getElementById('root')
 );
 

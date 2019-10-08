@@ -4,6 +4,7 @@ class Pages extends React.Component {
     render() {
         return (
             <>
+            <div>Hello</div>
             </>
         )
     }

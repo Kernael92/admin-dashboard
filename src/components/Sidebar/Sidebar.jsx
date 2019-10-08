@@ -1,5 +1,4 @@
 import React from "react";
-import routes from "routes.js";
 import { NavLink, Link } from "react-router-dom";
 // nodejs library to set properties for components
 import { PropTypes } from "prop-types";
@@ -10,12 +9,6 @@ import PerfectScrollbar from "perfect-scrollbar";
 // reactstrap components
 import { 
   Nav,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle, 
-  NavbarBrand,
-  Navbar,
 
 } from "reactstrap";
 
@@ -77,6 +70,7 @@ class Sidebar extends React.Component {
             href={logo.outterLink}
             className="simple-text logo-mini"
             target="_blank"
+            rel="noopener noreferrer"
             onClick={this.props.toggleSidebar}
           >
             <div className="logo-img">
@@ -89,6 +83,7 @@ class Sidebar extends React.Component {
             href={logo.outterLink}
             className="simple-text logo-normal"
             target="_blank"
+            rel="noopener noreferrer"
             onClick={this.props.toggleSidebar}
           >
             {logo.text}

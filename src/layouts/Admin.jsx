@@ -16,7 +16,7 @@ import logo from '../logo.svg';
 
 
 var ps;
-let content = routes.slice(2,9);
+
 
 class Admin extends React.Component {
   constructor(props) {

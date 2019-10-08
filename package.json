@@ -10,6 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@fortawesome/react-native-fontawesome": "^0.1.0",
     "bootstrap": "^4.3.1",
+    "history": "^4.10.1",
     "node-sass": "^4.12.0",
     "perfect-scrollbar": "^1.4.0",
     "react": "^16.9.0",
