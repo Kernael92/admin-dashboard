@@ -1,7 +1,7 @@
 import React from 'react';
 
 // reactstrap components
-import { Card, CardHeader,CardTitle, CardBody, Row, Col } from 'reactstrap';
+import { Card, CardHeader,CardFooter, CardTitle, CardBody, Row, Col } from 'reactstrap';
 
 class Duration extends React.Component {
     render() {
@@ -19,12 +19,11 @@ class Duration extends React.Component {
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Select your the training artcles with reference to your preferred reading time</p>
+                                <p>Select the training artcles with reference to your preferred reading time</p>
                             </div>
                             </CardBody>
                         </Card>
                         </Col>
-                        
                         <Col lg="4">
                         <Card className="card">
                             <CardHeader>
@@ -38,6 +37,9 @@ class Duration extends React.Component {
                                 <p>5 min</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">5 Min</a>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
@@ -53,6 +55,9 @@ class Duration extends React.Component {
                                 <p>10 min</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">10 min</a>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
@@ -68,6 +73,9 @@ class Duration extends React.Component {
                                 <p>30 min</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">30 min</a>
+                            </CardFooter>
                         </Card>
                         </Col>
                     </Row>                

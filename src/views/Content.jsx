@@ -1,7 +1,7 @@
 import React from 'react';
 
 // reactstrap components
-import { Card, CardHeader,CardTitle, CardBody, Row, Col } from 'reactstrap';
+import { Card, CardHeader,CardFooter,CardTitle, CardBody, Row, Col } from 'reactstrap';
 
 
 class Contents extends React.Component {
@@ -10,7 +10,7 @@ class Contents extends React.Component {
             <>
                 <div className="content">
                     <Row>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Phishing</h5>
@@ -21,11 +21,15 @@ class Contents extends React.Component {
                             <CardBody>
                             <div className="material-details">
                                 <p>Phishing</p>
+                                
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Phishing</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Social Engineering</h5>
@@ -38,9 +42,12 @@ class Contents extends React.Component {
                                 <p>Social Engineering</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Social</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Malware</h5>
@@ -53,9 +60,12 @@ class Contents extends React.Component {
                                 <p>Malware</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Malware</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Removal Media</h5>
@@ -68,9 +78,12 @@ class Contents extends React.Component {
                                 <p>Removal Media</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Removal Media</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Physical security</h5>
@@ -83,9 +96,12 @@ class Contents extends React.Component {
                                 <p>Physical security</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Physical</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Working Remotely</h5>
@@ -98,9 +114,12 @@ class Contents extends React.Component {
                                 <p>Working Remotely</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Remotely</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Mobile Security</h5>
@@ -113,9 +132,12 @@ class Contents extends React.Component {
                                 <p>Mobile Security</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">Mobile</a>
+                            </CardFooter>
                         </Card>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="6">
                         <Card className="card">
                             <CardHeader>
                             <h5 className="card-category">Safe Web browsing</h5>
@@ -125,9 +147,12 @@ class Contents extends React.Component {
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Mobile Security</p>
+                                <p>Safe Web browsing</p>
                             </div>
                             </CardBody>
+                            <CardFooter>
+                                <a href="#" class="btn btn-primary">browsing</a>
+                            </CardFooter>
                         </Card>
                         </Col>
                     </Row>                

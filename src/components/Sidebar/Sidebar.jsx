@@ -61,23 +61,9 @@ class Sidebar extends React.Component {
   };
   render() {
     const { bgColor, routes, logo } = this.props;
-    let logoImg = null;
     let logoText = null;
     if (logo !== undefined) {
       if (logo.outterLink !== undefined) {
-        logoImg = (
-          <a
-            href={logo.outterLink}
-            className="simple-text logo-mini"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={this.props.toggleSidebar}
-          >
-            <div className="logo-img">
-              <img src={logo.imgSrc} alt="react-logo" />
-            </div>
-          </a>
-        );
         logoText = (
           <a
             href={logo.outterLink}
@@ -90,17 +76,6 @@ class Sidebar extends React.Component {
           </a>
         );
       } else {
-        logoImg = (
-          <Link
-            to={logo.innerLink}
-            className="simple-text logo-mini"
-            onClick={this.props.toggleSidebar}
-          >
-            <div className="logo-img">
-              <img src={logo.imgSrc} alt="react-logo" />
-            </div>
-          </Link>
-        );
         logoText = (
           <Link
             to={logo.innerLink}
@@ -115,9 +90,8 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar" data={bgColor}>
         <div className="sidebar-wrapper" ref="sidebar">
-          {logoImg !== null || logoText !== null ? (
+          { logoText !== null ? (
             <div className="logo">
-              {logoImg}
               {logoText}
             </div>
           ) : null}
