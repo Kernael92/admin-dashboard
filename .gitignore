@@ -40,4 +40,4 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-config.py
+
