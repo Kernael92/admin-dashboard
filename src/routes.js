@@ -4,6 +4,7 @@ import Articles from 'views/Articles.jsx';
 import Duration from 'views/Duration.jsx';
 import Pages from 'views/Pages.jsx';
 import Reports from 'views/Reports.jsx';
+import Phishing from 'views/Phishing.jsx';
 import Subscription from 'views/Subscription.jsx';
 
 
@@ -60,6 +61,13 @@ let routes = [
         component: Subscription,
         layout: "/admin"
     },
+    {
+        path: "/phishing",
+        name: "Phishing",
+        component: Phishing,
+        layout: "/admin"
+    }
+    
 
 ];
 

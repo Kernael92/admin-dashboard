@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardHeader,CardFooter,CardTitle, CardBody, Row, Col } from 'reactstrap';
 
 
-class Contents extends React.Component {
+class Phishing extends React.Component {
     render() {
         return (
             <>
@@ -13,145 +13,144 @@ class Contents extends React.Component {
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Phishing</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Phishing Materials</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Phishing</p>
-                                
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="/admin/phishing" class="btn btn-primary">Phishing</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Social Engineering</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Social Engineering</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Social Engineering</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Social</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Malware</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Malware</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Malware</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Malware</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Removal Media</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Removal Media</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Removal Media</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Removal Media</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Physical security</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Physical security</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Physical security</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Physical</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Working Remotely</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Working Remotely</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Working Remotely</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Remotely</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Mobile Security</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Mobile Security</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Mobile Security</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Mobile</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="6">
                         <Card className="card">
                             <CardHeader>
-                            <h5 className="card-category">Safe Web browsing</h5>
+                            <h5 className="card-category">Phishing101</h5>
                             <CardTitle tag="h3">
-                                <p>Safe Web browsing</p>
+                                <p>Phishing101 Materials</p>
                             </CardTitle>
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>Safe Web browsing</p>
+                                <p>Phishing101</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">browsing</a>
+                                <a href="/admin/Phishing101" class="btn btn-primary">Phishing101</a>
                             </CardFooter>
                         </Card>
                         </Col>
@@ -162,4 +161,4 @@ class Contents extends React.Component {
         }
     }
 
-export default Contents;
+export default Phishing;
