@@ -7,6 +7,7 @@ import Reports from 'views/Reports.jsx';
 import Subscription from 'views/Subscription.jsx';
 import Phishing from 'views/Phishing.jsx';
 import Phishing101 from 'views/Phishing101.jsx';
+import FileInput from 'views/Home.jsx';
 
 
 
@@ -74,7 +75,14 @@ let routes = [
         name: "Phishing",
         component: Phishing101,
         layout: "/admin"
+    },
+    {
+        path: "/home",
+        name: "FileInput",
+        component: FileInput,
+        layout: "/admin"
     }
+
     
 
 ];

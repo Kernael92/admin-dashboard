@@ -24,7 +24,7 @@ class Phishing101 extends React.Component {
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">videos</a>
+                                <a href="/admin/home" class="btn btn-primary">videos</a>
                             </CardFooter>
                         </Card>
                         </Col>
