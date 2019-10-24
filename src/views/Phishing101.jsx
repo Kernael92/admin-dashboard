@@ -38,11 +38,11 @@ class Phishing101 extends React.Component {
                             </CardHeader>
                             <CardBody>
                             <div className="material-details">
-                                <p>infographics1</p>   
+                                <p>infographics</p>   
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">Infographics</a>
+                                <a href="/admin/fileupload" class="btn btn-primary">Infographics</a>
                             </CardFooter>
                         </Card>
                         </Col>
@@ -60,7 +60,7 @@ class Phishing101 extends React.Component {
                             </div>
                             </CardBody>
                             <CardFooter>
-                                <a href="#" class="btn btn-primary">posters</a>
+                                <a href="/admin/video" class="btn btn-primary">posters</a>
                             </CardFooter>
                         </Card>
                         </Col>

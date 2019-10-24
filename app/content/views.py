@@ -7,6 +7,12 @@ import functools
 from app.utils.db import *
 from pymongo import MongoClient
 from flask_paginate import Pagination, get_page_parameter
+from flask_cors import CORS, cross_origin
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+logger = logging.getLogger('HELLO WORLD')
 
 client = MongoClient("mongodb://127.0.0.1:27017")
 db = client.ephoenix
@@ -82,3 +88,15 @@ def upload():
             # Redirect the user to the uploaded_file route, which
             # will basically show on the browser the upload file
             return redirect(url_for('content.uploaded_file', filename=filename)) 
+
+@content.route('/uploaded_file/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(target, filename)
+
+@content.route('/uploads')
+def uploads():
+    phishing101_1  = phishing101.find()
+    
+
+    return render_template('index.html', phishing101=phishing101_1 )
+
