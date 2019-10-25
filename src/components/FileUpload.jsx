@@ -1,51 +1,58 @@
 import React from 'react';
+import axios from 'axios';
+
+
 
 class Main extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            imageURL: '',
+            file: null
         };
-        this.handleUploadImage = this.handleUploadImage.bind(this);
+
+        this.handleImagePreview = this.handleImagePreview.bind(this);
+        this.handleImageUpload = this.handleImageUpload.bind(this);
     }
 
-    handleUploadImage(ev) {
-        ev.preventDefault();
 
-        const data = new FormData();
-        data.append('file', this.uploadInput.files[0]);
-        data.append('filename', this.fileName.value);
+    handleImageUpload(uploadEvent) {
+        uploadEvent.preventDefault();
+        let fileToUpload = this.state.file;
+        const formData = new FormData();
 
+        formData.append("file", fileToUpload);
 
-        fetch('http://localhost:8000/content/upload', {
-            method:'POST',
-            body: data,
-        }), then((response) => {
-            response.json().then((body) => {
-                this.setState({ imageURL: `http://localhost:8000/content/${body.file}` });
-            });
-        });
+        axios({
+            method: 'post',
+            url: 'http://localhost:8000/content/upload',
+            data: formData,
+            config: { headers: { 'Content-Type': 'multipart/form-data' } }
+        })
+            .then(response => console.log(response))
+            .catch(errors => console.log(errors))
+
+    }
+
+    handleImagePreview(previewEvent) {
+        this.setState({
+            file: URL.createObjectURL(previewEvent.target.files[0])
+        })
     }
 
     render() {
         return (
-            <form onSubmit={this.handleUploadImage}>
-                <div>
-                    <input ref={(ref) => {this.uploadInput = ref; }} type="file" />
-                </div>
-                <div>
-                    <input ref={(ref) => {this.fileName = ref; }} type='text' placeholder="Enter the desired name of file" />
-                </div>
-                <br />
-                <div>
-                    <button>Upload</button>
-                </div>
-                <img src="{this.state.imageURL}" alt="img"/>
-
-
-            </form>
-        );
+            <div className="content">
+                <form action="http://localhost:8000/content/upload" method="post" encType="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" class="form-control-file" onChange={this.handleImagePreview} />
+                        <img src={this.state.file} class="img-thumbnail" alt="" />
+                        <button type="submit" class="btn btn-outline-dark" onClick={this.handleImageUpload}> Upload Photo </button>
+                    </div>
+                </form>
+            </div>
+        )
     }
+
 }
 export default Main;

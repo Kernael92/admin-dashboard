@@ -93,7 +93,7 @@ let routes = [
     {
         path: "/fileupload",
         name: "FileUpload",
-        component: FileUpload,
+        component: Main,
         layout: "/admin"
     }
 
