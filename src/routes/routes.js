@@ -8,7 +8,6 @@ import Subscription from 'views/Subscription.jsx';
 import Phishing from 'views/Phishing.jsx';
 import Phishing101 from 'views/Phishing101.jsx';
 import FileInput from 'views/Home.jsx';
-import Video from 'views/Phishing101/Video.jsx';
 import Main from 'components/FileUpload.jsx';
 
 
@@ -82,12 +81,6 @@ let routes = [
         path: "/home",
         name: "FileInput",
         component: FileInput,
-        layout: "/admin"
-    },
-    {
-        path: "/video",
-        name: "Video",
-        component: Video,
         layout: "/admin"
     },
     {
