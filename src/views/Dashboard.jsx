@@ -1,102 +1,190 @@
 import React from 'react';
 
 // reactstrap components
-import { Card, CardHeader,CardTitle, CardBody, Row, Col } from 'reactstrap';
+import { Card, CardHeader,CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
 
 class Dashboard extends React.Component {
     render() {
+        const { image } = this.props;
+        var style = {
+            backgroundImage: 'url(https://source.unsplash.com/user/erondu/600x400)',
+        };
         return (
             <>
             <div className="content">
                     <Row>
                         <Col lg="4">
                         <Card className="card">
-                            <CardHeader>
-                            <h5 className="card-category">Content</h5>
-                            <CardTitle tag="h3">
-                                <p>Content</p>
-                            </CardTitle>
+                            <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
+                                <header style={style} id={image} className="card-header">
+                                    <h4 className="card-header--title">Content</h4>
+                                </header>
                             </CardHeader>
-                            <CardBody>
-                            <div className="material-details">
-                                <a href="/admin/content" className="card-link">Content</a>
-                            </div>
+                            <CardBody className="card-body">
+                                <div className="card-body">
+                                    <h2>Training Materials</h2>
+                                    <p className="body-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+                                        Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                                        Nulla quis sem at nibh elementum imperdiet. 
+                                        Duis sagittis ipsum. Praesent mauris. 
+                                        Fusce nec tellus sed augue semper porta. Mauris massa. 
+                                    </p>
+                                </div>
                             </CardBody>
+                            <CardFooter>
+                                <button className="button button-primary">
+                                    <a to="content">
+                                    <i className="fa fa-chevron-right"></i>
+                                    Find out more
+                                    </a>
+                                </button>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
                         <Card className="card">
-                            <CardHeader>
-                            <h5 className="card-category">Duration</h5>
-                            <CardTitle tag="h3">
-                                Duration
-                            </CardTitle>
+                        <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
+                                <header style={style} id={image} className="card-header">
+                                    <h4 className="card-header--title">Duration</h4>
+                                </header>
                             </CardHeader>
-                            <CardBody>
-                            <div className="material-details">
-                                <a href="/admin/duration" className="card-link">Duration</a>
-                            </div>
+                            <CardBody className="card-body">
+                                <div className="card-body">
+                                    <h2>Duration</h2>
+                                    <p className="body-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+                                        Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                                        Nulla quis sem at nibh elementum imperdiet. 
+                                        Duis sagittis ipsum. Praesent mauris. 
+                                        Fusce nec tellus sed augue semper porta. Mauris massa. 
+                                    </p>
+                                </div>
                             </CardBody>
+                            <CardFooter>
+                                <button className="button button-primary">
+                                    <a to="#">
+                                    <i className="fa fa-chevron-right"></i>
+                                    Find out more
+                                    </a>
+                                </button>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
                         <Card className="card">
-                            <CardHeader>
-                            <h5 className="card-category">Articles</h5>
-                            <CardTitle tag="h3">
-                                <p>Articles</p>
-                            </CardTitle>
+                        <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
+                                <header style={style} id={image} className="card-header">
+                                    <h4 className="card-header--title">Articles</h4>
+                                </header>
                             </CardHeader>
-                            <CardBody>
-                            <div className="material-details">
-                                <a href="/admin/articles" className="card-link">Articles</a>
-                            </div>
+                            <CardBody className="card-body">
+                                <div className="card-body">
+                                    <h2>Articles</h2>
+                                    <p className="body-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+                                        Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                                        Nulla quis sem at nibh elementum imperdiet. 
+                                        Duis sagittis ipsum. Praesent mauris. 
+                                        Fusce nec tellus sed augue semper porta. Mauris massa. 
+                                    </p>
+                                </div>
                             </CardBody>
+                            <CardFooter>
+                                <button className="button button-primary">
+                                    <a to="#">
+                                    <i className="fa fa-chevron-right"></i>
+                                    Find out more
+                                    </a>
+                                </button>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
                         <Card className="card">
-                            <CardHeader>
-                            <h5 className="card-category">Pages</h5>
-                            <CardTitle tag="h3">
-                                <p>Pages</p>
-                            </CardTitle>
+                        <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
+                                <header style={style} id={image} className="card-header">
+                                    <h4 className="card-header--title">Pages</h4>
+                                </header>
                             </CardHeader>
-                            <CardBody>
-                            <div className="material-details">
-                                <a href="/admin/pages" className="card-link">Pages</a>
-                            </div>
+                            <CardBody className="card-body">
+                                <div className="card-body">
+                                    <h2>Pages</h2>
+                                    <p className="body-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+                                        Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                                        Nulla quis sem at nibh elementum imperdiet. 
+                                        Duis sagittis ipsum. Praesent mauris. 
+                                        Fusce nec tellus sed augue semper porta. Mauris massa. 
+                                    </p>
+                                </div>
                             </CardBody>
+                            <CardFooter>
+                                <button className="button button-primary">
+                                    <a to="#">
+                                    <i className="fa fa-chevron-right"></i>
+                                    Find out more
+                                    </a>
+                                </button>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
                         <Card className="card">
-                            <CardHeader>
-                            <h5 className="card-category">Reports</h5>
-                            <CardTitle tag="h3">
-                                <p>Reports</p>
-                            </CardTitle>
+                            <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
+                                <header style={style} id={image} className="card-header">
+                                    <h4 className="card-header--title">Reports</h4>
+                                </header>
                             </CardHeader>
-                            <CardBody>
-                            <div className="material-details">
-                                <a href="/admin/reports" className="card-link">Reports</a>
-                            </div>
+                            <CardBody className="card-body">
+                                <div className="card-body">
+                                    <h2>Reports</h2>
+                                    <p className="body-content">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+                                    Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                                    Nulla quis sem at nibh elementum imperdiet. 
+                                    Duis sagittis ipsum. Praesent mauris. 
+                                    Fusce nec tellus sed augue semper porta. Mauris massa. 
+                                    </p>
+                                </div>
                             </CardBody>
+                            <CardFooter>
+                                <button className="button button-primary">
+                                    <a to="#">
+                                    <i className="fa fa-chevron-right"></i>
+                                    Find out more
+                                    </a>
+                                </button>
+                            </CardFooter>
                         </Card>
                         </Col>
                         <Col lg="4">
                         <Card className="card">
-                            <CardHeader>
-                            <h5 className="card-category">Subscription</h5>
-                            <CardTitle tag="h3">
-                                <p>Subscription</p>
-                            </CardTitle>
+                            <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
+                                <header style={style} id={image} className="card-header">
+                                    <h4 className="card-header--title">Subscription</h4>
+                                </header>
                             </CardHeader>
-                            <CardBody>
-                            <div className="material-details">
-                                <a href="/admin/subscription" className="card-link">Subscription</a>
-                            </div>
+                            <CardBody className="card-body">
+                                <div className="card-body">
+                                    <h2>Subscription options</h2>
+                                    <p className="body-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+                                        Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                                        Nulla quis sem at nibh elementum imperdiet. 
+                                        Duis sagittis ipsum. Praesent mauris. 
+                                        Fusce nec tellus sed augue semper porta. Mauris massa. 
+                                    </p>
+                                </div>
                             </CardBody>
+                            <CardFooter>
+                                <button className="button button-primary">
+                                    <a to="#">
+                                    <i className="fa fa-chevron-right"></i>
+                                    Find out more
+                                    </a>
+                                </button>
+                            </CardFooter>
                         </Card>
                         </Col>
                     </Row>                

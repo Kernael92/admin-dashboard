@@ -6,7 +6,7 @@ import PerfectScrollbar from "perfect-scrollbar";
 // core components
 import AdminNavbar from "components/Navbars/AdminNavbar.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
-import routes from "routes.js";
+import routes from "routes/routes.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import logo from '../logo.svg';

@@ -5,6 +5,11 @@ import Duration from 'views/Duration.jsx';
 import Pages from 'views/Pages.jsx';
 import Reports from 'views/Reports.jsx';
 import Subscription from 'views/Subscription.jsx';
+import Phishing from 'views/Phishing.jsx';
+import Phishing101 from 'views/Phishing101.jsx';
+import FileInput from 'views/Home.jsx';
+import Main from 'components/FileUpload.jsx';
+
 
 
 
@@ -60,6 +65,33 @@ let routes = [
         component: Subscription,
         layout: "/admin"
     },
+    {
+        path: "/phishing",
+        name: "Phishing",
+        component: Phishing,
+        layout: "/admin"
+    },
+    {
+        path: "/phishing101",
+        name: "Phishing",
+        component: Phishing101,
+        layout: "/admin"
+    },
+    {
+        path: "/home",
+        name: "FileInput",
+        component: FileInput,
+        layout: "/admin"
+    },
+    {
+        path: "/fileupload",
+        name: "FileUpload",
+        component: Main,
+        layout: "/admin"
+    }
+
+
+    
 
 ];
 

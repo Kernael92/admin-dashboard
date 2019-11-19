@@ -60,7 +60,8 @@ class Sidebar extends React.Component {
     });
   };
   render() {
-    const { bgColor, routes, logo } = this.props;
+    const { bgColor,routes, logo } = this.props;
+    let bar = routes.slice(0,7)
     let logoText = null;
     if (logo !== undefined) {
       if (logo.outterLink !== undefined) {
@@ -96,7 +97,7 @@ class Sidebar extends React.Component {
             </div>
           ) : null}
           <Nav>
-            {routes.map((prop, key) => {
+            {bar.map((prop, key) => {
               if (prop.redirect) return null;
               return (
                 <li
