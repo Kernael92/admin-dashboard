@@ -1,7 +1,7 @@
 import React from 'react';
 
 // reactstrap components
-import { Card, CardHeader,CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
+import { Card,CardDeck, CardHeader,CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
 
 class Dashboard extends React.Component {
     render() {
@@ -13,6 +13,7 @@ class Dashboard extends React.Component {
             <>
             <div className="content">
                     <Row>
+                        <CardDeck className="card-deck">
                         <Col lg="4">
                         <Card className="card">
                             <CardHeader image={ "https://source.unsplash.com/user/erondu/600x400" }>
@@ -34,7 +35,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a to="content">
+                                    <a href="content">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
@@ -187,6 +188,7 @@ class Dashboard extends React.Component {
                             </CardFooter>
                         </Card>
                         </Col>
+                        </CardDeck>
                     </Row>                
                 </div>
             </>
