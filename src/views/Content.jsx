@@ -5,22 +5,29 @@ import cx from 'classnames';
 import { PrismCode } from 'react-prism';
 import { Player, ControlBar } from 'video-react';
 import { CsvToHtmlTable } from 'react-csv-to-table';
+import { phishing } from 'assets/img/phishing.jpeg';
 
 // react modal video components
 import 'react-modal-video/scss/modal-video.scss'
 import ModalVideo from 'react-modal-video'
 
-
-
+// mdbreact components
+import {
+    MDBContainer,
+    MDBCard,
+    MDBCardTitle,
+    MDBBtn,
+    MDBRow,
+    MDBCol,
+    MDBIcon
+} from 'mdbreact'
 
 // reactstrap components
 import { 
     Card,
     CardDeck, 
     CardImg,
-    Img,
-    Svg,
-    Path,
+    
     CardHeader,
     CardFooter,
     CardTitle, 
@@ -103,51 +110,53 @@ class Contents extends React.Component {
         return (
             <>
                 <div className="content">
-                        <Row>
-                        <CardDeck className="card-deck">
-                            <Col lg="4">
-                            <Card className={cx("app__toggle btn btn-info", {
-                                            "app__toggle--active": this.state.isOpen1
-                                        })}
-                                        onClick={() => this.toggle(1)} 
-                                className="card"
+                    <MDBContainer className="d-flex flex-wrap">
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20%2873%29.jpg)"
+                                    
+                                }}
                             >
-                                <CardImg className="card__image-container">
-                                    <Img
-                                        className="card__image"
-                                        src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80"
-                                        alt=""
-                                    />
-                                </CardImg>
-                                <Svg className="card__svg" viewBox="0 0 800 500">
-                                    <Path 
-                                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" 
-                                        stroke="transparent" 
-                                        fill="#333"
-                                    />
-                                    <Path 
-                                        className="card__line" 
-                                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" 
-                                        stroke="pink" 
-                                        stroke-width="3" 
-                                        fill="transparent"
-                                    />
+                                <div 
+                                    className="text-white text-center 
+                                                d-flex align-items-center 
+                                                rgba-black-strong py-5 px-4 rounded"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="email-square"/> 
+                                            Phishing
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Phishing materials</strong>
 
-                                </Svg>
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Phishing Materials</h2>
-                                    <p className="body-content">
-                                        Phishing is the fraudulent attempt to obtain 
-                                        sensitive information such as usernames, 
-                                        passwords and credit card details by disguising 
-                                        oneself as a trustworthy entity in an electronic 
-                                        communication.
-                                    </p>   
+                                        </MDBCardTitle>
+                                        <p>
+                                            Phishing is the fraudulent attempt to obtain 
+                                            sensitive information such as usernames, 
+                                            passwords and credit card details by disguising 
+                                            oneself as a trustworthy entity in an electronic 
+                                            communication.
+                                        </p>
+                                        <MDBBtn 
+                                            gradient="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                            "app__toggle--active": this.state.isOpen1
+                                            })}
+                                            onClick={() => this.toggle(1)} 
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
                                 
-                            </Card>
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen1}
                                 className={
@@ -202,7 +211,7 @@ class Contents extends React.Component {
 
                                         </ListGroup>
                                     </Card>
-                                    <button onClick={() => this.toggle(2)} className="app__button">
+                                    <button onClick={() => this.toggle(1)} className="app__button">
                                         close
                                     </button>
                                     
@@ -211,28 +220,53 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            <Col lg="4">
-                            <Card 
-                                className={cx("app__toggle btn btn-info", {
-                                            "app__toggle--active": this.state.isOpen2
-                                        })}
-                                className="card"
-                                onClick={() => this.toggle(2)} 
+                            </MDBCol>
+                            <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
+                                
                             >
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Social Engineering</h2>
-                                    <p className="body-content">
-                                    Social engineering attacks usually exploit human psychology 
-                                    and susceptibility to manipulation to trick victims 
-                                    into uncovering sensitive data or breaking security 
-                                    measures that will allow an attacker access to 
-                                    the network.
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="person"/> 
+                                            Social Engineering
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Social Enginnering</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Social engineering attacks usually exploit human psychology 
+                                            and susceptibility to manipulation to trick victims 
+                                            into uncovering sensitive data or breaking security 
+                                            measures that will allow an attacker access to 
+                                            the network.
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                            "app__toggle--active": this.state.isOpen2
+                                            })}
+                                            onClick={() => this.toggle(2)} 
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
-                            </Card>
+                                
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen2}
                                 className={
@@ -266,28 +300,52 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            <Col lg="4">
-                            <Card 
-                                className={cx("app__toggle btn btn-info", {
-                                            "app__toggle--active": this.state.isOpen3
-                                        })}
-                                className="card"
-                                onClick={() => this.toggle(3)} 
+                        </MDBCol>
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
                             >
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Ransomware</h2>
-                                    <p className="body-content">
-                                        Ransomware is a type of malicious software, 
-                                        or malware, designed to deny access to a computer system 
-                                        or data until a ransom is paid. Ransomware typically spreads 
-                                        through phishing emails or by unknowingly visiting an infected website. 
-                                        Ransomware can be devastating to an individual or an organization.
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="phone"/> 
+                                            Ransomware
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Ransonware</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Ransomware is a type of malicious software, 
+                                            or malware, designed to deny access to a computer system 
+                                            or data until a ransom is paid. Ransomware typically spreads 
+                                            through phishing emails or by unknowingly visiting an infected website. 
+                                            Ransomware can be devastating to an individual or an organization.
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                            "app__toggle--active": this.state.isOpen3
+                                            })}
+                                            onClick={() => this.toggle(3)} 
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
-                            </Card>
+                                
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen3}
                                 className={
@@ -316,34 +374,54 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            <div >   
-                            </div>
-                            </Col>
-                            <Col lg="4">
-                            <Card 
-                                className={cx("app__toggle btn btn-info", {
-                                        "app__toggle--active": this.state.isOpen4
-                                    })}
-                                className="card"
-                                onClick={() => this.toggle(4)}
+                        </MDBCol>
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
                             >
-                            
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Removal media</h2>
-                                    <p className="body-content">
-                                    Removable media can be thought of as a portable storage 
-                                    medium that allows users to copy data to it 
-                                    and then take it off site, and vice versa. 
-                                    It presents itself as a convenient, 
-                                    cost effective storage solution that is available 
-                                    in many different size capacities and form factors, 
-                                    with differing transfer speed capabilities
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="usb"/> 
+                                            Removable Media
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Removable Media</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Removable media can be thought of as a portable storage 
+                                            medium that allows users to copy data to it 
+                                            and then take it off site, and vice versa. 
+                                            It presents itself as a convenient, 
+                                            cost effective storage solution that is available 
+                                            in many different size capacities and form factors, 
+                                            with differing transfer speed capabilities.
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                                "app__toggle--active": this.state.isOpen4
+                                            })}
+                                            onClick={() => this.toggle(4)}
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
                                 
-                            </Card>
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen4}
                                 className={
@@ -373,27 +451,51 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            <Col lg="4">
-                            <Card 
-                                className={cx("app__toggle btn btn-info", {
-                                        "app__toggle--active": this.state.isOpen5
-                                    })}
-                                className="card"
-                                onClick={() => this.toggle(5)}
+                        </MDBCol>
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
                             >
-                                <CardBody>
-                                <div className="material-details">
-                                    <h2>Physical Security</h2>
-                                    <p className="body-content">
-                                        Physical security is the protection of personnel, 
-                                        hardware, software, networks and data from physical actions 
-                                        and events that could cause serious loss or damage to an enterprise, 
-                                        agency or institution.
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="phone"/> 
+                                            Physical security
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Physical security</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Physical security is the protection of personnel, 
+                                            hardware, software, networks and data from physical actions 
+                                            and events that could cause serious loss or damage to an enterprise, 
+                                            agency or institution.
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                                "app__toggle--active": this.state.isOpen5
+                                            })}
+                                            onClick={() => this.toggle(5)}
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
-                            </Card>
+                                
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen5}
                                 className={
@@ -422,24 +524,49 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            <Col lg="4">
-                            <Card className={cx("app__toggle btn btn-info", {
-                                        "app__toggle--active": this.state.isOpen6
-                                    })}
-                                    className="card"
-                                    onClick={() => this.toggle(6)}
+                        </MDBCol>
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
                             >
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Working Remotely</h2>
-                                    <p className="body-content">
-                                        Remote work refers to a job that is done outside of the office. 
-                                        It is sometimes called telecommuting or teleworking
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="phone"/> 
+                                            Working remotely
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Working Remotely</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Remote work refers to a job that is done outside of the office. 
+                                            It is sometimes called telecommuting or teleworking
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                            "app__toggle--active": this.state.isOpen6
+                                            })}
+                                            onClick={() => this.toggle(6)}
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
-                            </Card>
+                                
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen6}
                                 className={
@@ -468,28 +595,52 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            <Col lg="6">
-                            <Card 
-                                className={cx("app__toggle btn btn-info", {
-                                        "app__toggle--active": this.state.isOpen7
-                                    })}
-                                className="card"
-                                onClick={() => this.toggle(7)}
+                        </MDBCol>
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
                             >
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Mobile Security</h2>
-                                    <p className="body-content">
-                                        Mobile security is the protection of smartphones, 
-                                        tablets, laptops and other portable computing devices, 
-                                        and the networks they connect to, from threats 
-                                        and vulnerabilities associated with wireless computing. 
-                                        Mobile security is also known as wireless security.
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="phone-square"/> 
+                                            Mobile security
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Mobile Security</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Mobile security is the protection of smartphones, 
+                                            tablets, laptops and other portable computing devices, 
+                                            and the networks they connect to, from threats 
+                                            and vulnerabilities associated with wireless computing. 
+                                            Mobile security is also known as wireless security.
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                            "app__toggle--active": this.state.isOpen7
+                                            })}
+                                            onClick={() => this.toggle(7)}
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
-                            </Card>
+                                
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen7}
                                 className={
@@ -518,28 +669,52 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            <Col lg="6">
-                            <Card 
-                                className={cx("app__toggle btn btn-info", {
-                                        "app__toggle--active": this.state.isOpen8
-                                    })}
-                                className="card"
-                                onClick={() => this.toggle(8)}
+                        </MDBCol>
+                        <MDBCol md="6" className="md-0 mb-4">
+                            <MDBCard
+                                className="card-image"
+                                style={{
+                                    backgroundImage:
+                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                }}
                             >
-                                <CardBody className="card-body">
-                                <div className="card-body">
-                                    <h2>Safe Web browsing</h2>
-                                    <p className="body-content">
-                                        Safe Browsing is a Google service that lets client 
-                                        applications check URLs against Google's constantly updated 
-                                        lists of unsafe web resources. 
-                                        Examples of unsafe web resources are social engineering sites (phishing and deceptive sites) 
-                                        and sites that host malware or unwanted software
-                                    </p>
+                                <div 
+                                    className="primary-color text-white 
+                                                d-flex align-items-center 
+                                                 py-5 px-4 text-center"
+                                >
+                                    <div>
+                                        <h5 className="blue-text">
+                                            <MDBIcon icon="phone"/> 
+                                            Safe Web browsing
+                                        </h5>
+                                        <MDBCardTitle tag="h3" className="pt-2">
+                                            <strong>Safe Web browsing</strong>
+
+                                        </MDBCardTitle>
+                                        <p>
+                                            Safe Browsing is a Google service that lets client 
+                                            applications check URLs against Google's constantly updated 
+                                            lists of unsafe web resources. 
+                                            Examples of unsafe web resources are social engineering sites 
+                                            and sites that host malware or unwanted software
+                                        </p>
+                                        <MDBBtn 
+                                            color="blue"
+                                            className={cx("app__toggle btn btn-info", {
+                                            "app__toggle--active": this.state.isOpen8
+                                            })}
+                                            onClick={() => this.toggle(8)}
+                                        >
+                                            <MDBIcon icon="clone left" />
+                                            View items
+
+                                        </MDBBtn>
+                                    </div>
+
                                 </div>
-                                </CardBody>
-                            </Card>
+                                
+                            </MDBCard>
                             <Collapse
                                 isOpen={this.state.isOpen8}
                                 className={
@@ -568,10 +743,8 @@ class Contents extends React.Component {
                                 </React.Fragment>
                                 )}
                             />
-                            </Col>
-                            </CardDeck>
-                        </Row> 
-                                
+                        </MDBCol>
+                    </MDBContainer>                
                 </div>
             </>
             )
