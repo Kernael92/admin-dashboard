@@ -1,33 +1,25 @@
 import React from 'react';
-import Modal from 'react-awesome-modal';
 import Collapse from '@kunukn/react-collapse';
 import cx from 'classnames';
 import { PrismCode } from 'react-prism';
 import { Player, ControlBar } from 'video-react';
 import { CsvToHtmlTable } from 'react-csv-to-table';
-import { phishing } from 'assets/img/phishing.jpeg';
+import Modal from 'react-responsive-modal';
+import phishing from 'assets/img/phishing.pdf';
+
+// react-pure-modal components
+import PureModal from 'react-pure-modal';
+import 'react-pure-modal/dist/react-pure-modal.min.css';
 
 // react modal video components
 import 'react-modal-video/scss/modal-video.scss'
 import ModalVideo from 'react-modal-video'
-
-// mdbreact components
-import {
-    MDBContainer,
-    MDBCard,
-    MDBCardTitle,
-    MDBBtn,
-    MDBRow,
-    MDBCol,
-    MDBIcon
-} from 'mdbreact'
 
 // reactstrap components
 import { 
     Card,
     CardDeck, 
     CardImg,
-    
     CardHeader,
     CardFooter,
     CardTitle, 
@@ -37,6 +29,24 @@ import {
     ListGroup, 
     ListGroupItem 
 } from 'reactstrap';
+
+// mdbreact components
+import {
+    MDBContainer,
+    MDBCard,
+    MDBCardTitle,
+    MDBBtn,
+    MDBModal,
+    MDBModalBody,
+    MDBModalFooter,
+    MDBModalHeader,
+    MDBCol,
+    MDBIcon
+} from 'mdbreact';
+
+// react-pdf components
+import { Document, Page, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const sources = {
     phishingOverview: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
@@ -68,13 +78,25 @@ class Contents extends React.Component {
             isOpen7: false,
             isOpen8: false,
             visible: false,
-            spy3: {}
+            modal1: false,
+            open: false,
+            spy3: {},
+            numPages: null,
+            pageNumber: 1,
         };
-        this.openModal = this.openModal.bind(this)
-        
-        
+        this.openModal = this.openModal.bind(this)    
+    }
+    onDocumentLoadSuccess = ({ numPages }) => {
+        this.setState({ numPages });
     }
 
+    onOpenModal = () => {
+        this.setState({open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    }
     
     
     // changeSource(name) {
@@ -87,6 +109,12 @@ class Contents extends React.Component {
     // }
     
     
+    toggleModal = nr => () => {
+        let modalNumber = 'modal' + nr
+        this.setState({
+            [modalNumber]: !this.state[modalNumber]
+        });
+    }
 
     toggle = index => {
         let collapse = "isOpen" + index;
@@ -107,6 +135,8 @@ class Contents extends React.Component {
       }
 
     render() {
+        const {open} = this.state
+        const { pageNumber, numPages } = this.state;
         return (
             <>
                 <div className="content">
@@ -116,7 +146,7 @@ class Contents extends React.Component {
                                 className="card-image"
                                 style={{
                                     backgroundImage:
-                                    "url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20%2873%29.jpg)"
+                                    "url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)"
                                     
                                 }}
                             >
@@ -127,7 +157,7 @@ class Contents extends React.Component {
                                 >
                                     <div>
                                         <h5 className="blue-text">
-                                            <MDBIcon icon="email-square"/> 
+                                            <MDBIcon icon="mail-square"/> 
                                             Phishing
                                         </h5>
                                         <MDBCardTitle tag="h3" className="pt-2">
@@ -181,34 +211,40 @@ class Contents extends React.Component {
                                             <ListGroupItem className="list-group-item" onClick={this.openModal} >
                                                 What is Phishing
                                             </ListGroupItem>
-                                            <ListGroupItem className="list-group-item" onClick={this.openModal}>
+                                            <ListGroupItem className="list-group-item" >
                                                 Common phishing examples
+                                                <div>
+                                                    <Document
+                                                        file={ phishing }
+                                                        onLoadSuccess={this.onDocumentLoadSuccess}
+                                                    >
+                                                    <Page pageNumber={pageNumber} />
+
+                                                    </Document>
+                                                    <p>Page {pageNumber} of {numPages} </p>
+                                                </div>
                                                 
                                             </ListGroupItem>
                                             
                                             <ListGroupItem className="list-group-item" >
                                                 <div>
-                                                    <a value="open" onClick={this.show.bind(this)}>Quiz</a>
+                                                    <a  onClick={this.onOpenModal}>Quiz</a>
                                                     <Modal 
-                                                        visible={this.state.visible} 
-                                                        onClickAway={this.hide.bind(this)}
-                                                        effect="fadeInUp"
-                                                        className="modal"
+                                                        open={open} 
+                                                        onClose={this.onCloseModal}
+                                                        little
                                                         
-                                                    >
-                                                        <div>
-                                                            <CsvToHtmlTable 
-                                                                data={sampleData} 
-                                                                csvDelimiter="," 
-                                                                tableClassName="table table-dark"
-                                                            />
-                                                            <a onClick={this.hide.bind(this)}>Close</a>                                                            <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
 
-                                                        </div>
+                                                    >   
+                                                        <CsvToHtmlTable 
+                                                            data={sampleData} 
+                                                            csvDelimiter="," 
+                                                            tableClassName="table table-dark"
+                                                        />
+                                                        
                                                     </Modal>
                                                 </div>
                                             </ListGroupItem>
-
                                         </ListGroup>
                                     </Card>
                                     <button onClick={() => this.toggle(1)} className="app__button">
@@ -226,12 +262,12 @@ class Contents extends React.Component {
                                 className="card-image"
                                 style={{
                                     backgroundImage:
-                                    "url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')"
+                                    "url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)"
                                 }}
                                 
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong py-5 px-4 rounded text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
@@ -241,7 +277,7 @@ class Contents extends React.Component {
                                             Social Engineering
                                         </h5>
                                         <MDBCardTitle tag="h3" className="pt-2">
-                                            <strong>Social Enginnering</strong>
+                                            <strong>Social Engineering</strong>
 
                                         </MDBCardTitle>
                                         <p>
@@ -310,7 +346,7 @@ class Contents extends React.Component {
                                 }}
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong  text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
@@ -384,7 +420,7 @@ class Contents extends React.Component {
                                 }}
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong  text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
@@ -461,7 +497,7 @@ class Contents extends React.Component {
                                 }}
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong  text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
@@ -534,7 +570,7 @@ class Contents extends React.Component {
                                 }}
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong  text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
@@ -605,7 +641,7 @@ class Contents extends React.Component {
                                 }}
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong  text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
@@ -679,7 +715,7 @@ class Contents extends React.Component {
                                 }}
                             >
                                 <div 
-                                    className="primary-color text-white 
+                                    className="rgba-black-strong  text-white 
                                                 d-flex align-items-center 
                                                  py-5 px-4 text-center"
                                 >
