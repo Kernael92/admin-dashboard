@@ -3,18 +3,21 @@ import Collapse from '@kunukn/react-collapse';
 import cx from 'classnames';
 import { PrismCode } from 'react-prism';
 import { Player, ControlBar } from 'video-react';
+// library to convert csv file to html table
 import { CsvToHtmlTable } from 'react-csv-to-table';
-import Modal from 'react-responsive-modal';
+// import Modal from 'react-responsive-modal';
 import phishing from 'assets/img/phishing.pdf';
-
+// react-player components for react video
+import ReactPlayer from 'react-player';
+// react-responsive-modal components
+import Modal from "react-responsive-modal"
 // react-pure-modal components
 import PureModal from 'react-pure-modal';
 import 'react-pure-modal/dist/react-pure-modal.min.css';
 
 // react modal video components
-import 'react-modal-video/scss/modal-video.scss'
-import ModalVideo from 'react-modal-video'
-
+import 'react-modal-video/scss/modal-video.scss';
+import ModalVideo from 'react-modal-video';
 // reactstrap components
 import { 
     Card,
@@ -27,8 +30,18 @@ import {
     Row, 
     Col, 
     ListGroup, 
-    ListGroupItem 
+    ListGroupItem, 
+    
+    ModalBody,
+    ModalHeader,
+    ModalFooter
 } from 'reactstrap';
+
+// react-bootstrap components
+import {
+    ModalTitle,
+    ModalDialog
+} from 'react-bootstrap';
 
 // mdbreact components
 import {
@@ -79,16 +92,25 @@ class Contents extends React.Component {
             isOpen8: false,
             visible: false,
             modal1: false,
+            modal2:false,
             open: false,
             spy3: {},
             numPages: null,
             pageNumber: 1,
+            show: false,
         };
-        this.openModal = this.openModal.bind(this)    
+        this.openModal = this.openModal.bind(this) 
+          
     }
     onDocumentLoadSuccess = ({ numPages }) => {
         this.setState({ numPages });
     }
+
+    goToPrevPage = () => 
+        this.setState(state => ({ pageNumber: state.pageNumber - 1}));
+
+    goToNextPage = () => 
+        this.setState(state => ({ pageNumber: state.pageNumber + 1}));
 
     onOpenModal = () => {
         this.setState({open: true });
@@ -109,6 +131,7 @@ class Contents extends React.Component {
     // }
     
     
+
     toggleModal = nr => () => {
         let modalNumber = 'modal' + nr
         this.setState({
@@ -122,21 +145,16 @@ class Contents extends React.Component {
         this.setState(prevState => ({ [collapse]: !prevState[collapse] }));
     };
 
-    show() {
-        this.setState({ visible: true});
-    }
 
-    hide() {
-        this.setState({ visible: false});
-    }
 
     openModal () {
         this.setState({isOpen: true})
       }
-
+    
+    
     render() {
-        const {open} = this.state
         const { pageNumber, numPages } = this.state;
+        
         return (
             <>
                 <div className="content">
@@ -199,50 +217,108 @@ class Contents extends React.Component {
                                 render={collapseState => (
                                 <React.Fragment>
                                     <div className="app__content">
-                                    
-                                    <ModalVideo 
+
+                                    {/* <ModalVideo 
                                         channel='youtube' 
                                         isOpen={this.state.isOpen} 
                                         videoId='PR0c-gJ20kA'
                                         onClose={() => this.setState({isOpen: false})} 
-                                    />
+                                    /> */}
                                     <Card className="card">
                                         <ListGroup>
-                                            <ListGroupItem className="list-group-item" onClick={this.openModal} >
-                                                What is Phishing
+                                            <ListGroupItem className="list-group-item" onClick={this.onOpenModal} >
+                                                <span onClick={this.onOpenModal}>What is Phishing</span>
+                                                <Modal
+                                                    open={this.state.open}
+                                                    onClose = {this.onCloseModal}
+                                                    styles={{
+                                                        modal: {
+                                                            maxWidth: "unset",
+                                                            width: "100%",
+                                                            padding: "unset"
+                                                        },
+                                                        closeButton: {
+                                                            background: "blue"
+                                                        }
+                                                    }}
+                                                    center
+                                                >
+                                                    <div className="player-wrapper">
+                                                        <ReactPlayer
+                                                            className="react-player" 
+                                                            url={[{src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', type: 'video/mp4'}]} 
+                                                            controls
+                                                            width="100%"
+                                                            height="calc(100vh - 100px)"
+                                                        /> 
+                                                    </div>
+
+                                                </Modal>
                                             </ListGroupItem>
                                             <ListGroupItem className="list-group-item" >
-                                                Common phishing examples
-                                                <div>
-                                                    <Document
-                                                        file={ phishing }
-                                                        onLoadSuccess={this.onDocumentLoadSuccess}
-                                                    >
-                                                    <Page pageNumber={pageNumber} />
-
-                                                    </Document>
-                                                    <p>Page {pageNumber} of {numPages} </p>
-                                                </div>
                                                 
+                                                <div>
+                                                    <span onClick={this.toggleModal(1)}>Common phishing examples</span>
+                                                    
+                                                        <ModalDialog
+                                                            isOpen={this.state.modal1}
+                                                            onClose={this.toggleModal(1)}
+                                                            scrollable
+                                                            centered
+                                                        
+                                                        >
+                                                            <ModalHeader closeButton>
+                                                                <ModalTitle >
+                                                                    Common phishing examples    
+                                                                </ModalTitle>
+                                                                <span onClick={this.goToPrevPage}>
+                                                                    <MDBIcon icon="angle-left" size="3x"/>
+                                                                </span>
+                                                                <span onClick={this.goToNextPage}>
+                                                                    <MDBIcon icon="angle-right" size="3x"/>
+                                                                </span>
+                                                            </ModalHeader>
+                                                            <ModalBody style={{'maxHeight': 'calc(100vh - 210px)', 'overFlowY': 'auto'}}>
+                                                                <Document
+                                                                    file={ phishing }
+                                                                    onLoadSuccess={this.onDocumentLoadSuccess}
+                                                                >
+                                                                <Page pageNumber={pageNumber} />
+
+                                                                </Document>
+                                                                <p>Page {pageNumber} of {numPages} </p>
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <button onClick={this.toggleModal(1)}>close</button>
+                                                            </ModalFooter>     
+                                                        </ModalDialog>   
+                                                </div>    
                                             </ListGroupItem>
                                             
                                             <ListGroupItem className="list-group-item" >
                                                 <div>
-                                                    <a  onClick={this.onOpenModal}>Quiz</a>
-                                                    <Modal 
-                                                        open={open} 
-                                                        onClose={this.onCloseModal}
-                                                        little
+                                                    <a  onClick={this.toggleModal(2)}>Quiz</a>
+                                                    <ModalDialog 
+                                                        isOpen={this.state.modal2}
+                                                        toggle={this.toggleModal(2)}
+                                                        scrollable
+                                                        centered
                                                         
 
-                                                    >   
+                                                    >
+                                                    <ModalBody> 
                                                         <CsvToHtmlTable 
                                                             data={sampleData} 
                                                             csvDelimiter="," 
                                                             tableClassName="table table-dark"
                                                         />
+                                                    </ModalBody>
+                                                    <ModalFooter>
+                                                        <button onClick={this.toggleModal(2)}>close</button>
+                                                    </ModalFooter>     
                                                         
-                                                    </Modal>
+                                                        
+                                                    </ModalDialog>
                                                 </div>
                                             </ListGroupItem>
                                         </ListGroup>
