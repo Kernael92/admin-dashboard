@@ -93,6 +93,7 @@ class Contents extends React.Component {
             visible: false,
             modal1: false,
             modal2:false,
+            modal3: false,
             open: false,
             spy3: {},
             numPages: null,
@@ -226,11 +227,11 @@ class Contents extends React.Component {
                                     /> */}
                                     <Card className="card">
                                         <ListGroup>
-                                            <ListGroupItem className="list-group-item" onClick={this.onOpenModal} >
-                                                <span onClick={this.onOpenModal}>What is Phishing</span>
+                                            <ListGroupItem className="list-group-item" onClick={this.toggleModal(3)} >
+                                                <span onClick={this.toggleModal(3)}>What is Phishing</span>
                                                 <Modal
-                                                    open={this.state.open}
-                                                    onClose = {this.onCloseModal}
+                                                    open={this.state.modal3}
+                                                    onClose = {this.toggleModal(3)}
                                                     styles={{
                                                         modal: {
                                                             maxWidth: "unset",
@@ -249,7 +250,7 @@ class Contents extends React.Component {
                                                             url={[{src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', type: 'video/mp4'}]} 
                                                             controls
                                                             width="100%"
-                                                            height="calc(100vh - 100px)"
+                                                            height="100%"
                                                         /> 
                                                     </div>
 
@@ -259,12 +260,28 @@ class Contents extends React.Component {
                                                 
                                                 <div>
                                                     <span onClick={this.toggleModal(1)}>Common phishing examples</span>
-                                                    
+                                                    <Modal
+                                                        open={this.state.modal1}
+                                                        onClose = {this.toggleModal(1)}
+                                                        styles={{
+                                                            modal: {
+                                                                maxWidth: "unset",
+                                                                width: "100%",
+                                                                padding: "unset",
+                                                                backgroundColor: "transparent"
+                                                            },
+                                                            closeButton: {
+                                                                background: "white"
+                                                            }
+                                                        }}
+                                                        center
+                                                        scrollable
+                                                    >
                                                         <ModalDialog
                                                             isOpen={this.state.modal1}
                                                             onClose={this.toggleModal(1)}
                                                             scrollable
-                                                            centered
+                                                            
                                                         
                                                         >
                                                             <ModalHeader closeButton>
@@ -272,13 +289,13 @@ class Contents extends React.Component {
                                                                     Common phishing examples    
                                                                 </ModalTitle>
                                                                 <span onClick={this.goToPrevPage}>
-                                                                    <MDBIcon icon="angle-left" size="3x"/>
+                                                                    <MDBIcon  icon="angle-left" size="3x"/>
                                                                 </span>
                                                                 <span onClick={this.goToNextPage}>
                                                                     <MDBIcon icon="angle-right" size="3x"/>
                                                                 </span>
                                                             </ModalHeader>
-                                                            <ModalBody style={{'maxHeight': 'calc(100vh - 210px)', 'overFlowY': 'auto'}}>
+                                                            <ModalBody >
                                                                 <Document
                                                                     file={ phishing }
                                                                     onLoadSuccess={this.onDocumentLoadSuccess}
@@ -292,6 +309,11 @@ class Contents extends React.Component {
                                                                 <button onClick={this.toggleModal(1)}>close</button>
                                                             </ModalFooter>     
                                                         </ModalDialog>   
+                                                        
+
+                                                    </Modal>
+                                                    
+                                                        
                                                 </div>    
                                             </ListGroupItem>
                                             
