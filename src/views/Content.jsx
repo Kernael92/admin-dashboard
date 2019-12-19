@@ -5,8 +5,9 @@ import { PrismCode } from 'react-prism';
 import { Player, ControlBar } from 'video-react';
 // library to convert csv file to html table
 import { CsvToHtmlTable } from 'react-csv-to-table';
-// import Modal from 'react-responsive-modal';
+
 import phishing from 'assets/img/phishing.pdf';
+import phish from 'assets/img/phish.jpeg';
 // react-player components for react video
 import ReactPlayer from 'react-player';
 // react-responsive-modal components
@@ -165,7 +166,9 @@ class Contents extends React.Component {
                                 className="card-image"
                                 style={{
                                     backgroundImage:
-                                    "url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)"
+                                    "url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRh9jM5-OF6tu8VB4E6q_V0Fn7aHt59LxrBVb4Zhsrrx_fQS5JF)",
+                                    backgroundRepeat: 'no-repeat, repeat',
+                                    backgroundSize: 'cover'
                                     
                                 }}
                             >
@@ -271,7 +274,7 @@ class Contents extends React.Component {
                                                                 backgroundColor: "transparent"
                                                             },
                                                             closeButton: {
-                                                                background: "white"
+                                                                backgroundColor: "transparent"
                                                             }
                                                         }}
                                                         center
@@ -320,27 +323,54 @@ class Contents extends React.Component {
                                             <ListGroupItem className="list-group-item" >
                                                 <div>
                                                     <a  onClick={this.toggleModal(2)}>Quiz</a>
+                                                    <Modal
+                                                    open={this.state.modal2}
+                                                    onClose = {this.toggleModal(2)}
+                                                    styles={{
+                                                        modal: {
+                                                            maxWidth: "unset",
+                                                            width: "100%",
+                                                            padding: "unset",
+                                                            backgroundColor: "transparent"
+                                                        }
+                                                        
+                                                    }}
+                                                    center
+                                                >
                                                     <ModalDialog 
                                                         isOpen={this.state.modal2}
                                                         toggle={this.toggleModal(2)}
+                                                        styles={{
+                                                        modalDialog: {
+                                                            maxWidth: "unset",
+                                                            width: "100%",
+                                                            padding: "unset",
+                                                           
+                                                        }
+                                                        
+                                                    }}
                                                         scrollable
                                                         centered
                                                         
 
                                                     >
-                                                    <ModalBody> 
-                                                        <CsvToHtmlTable 
-                                                            data={sampleData} 
-                                                            csvDelimiter="," 
-                                                            tableClassName="table table-dark"
-                                                        />
-                                                    </ModalBody>
-                                                    <ModalFooter>
-                                                        <button onClick={this.toggleModal(2)}>close</button>
-                                                    </ModalFooter>     
+                                                        <ModalBody> 
+                                                            <CsvToHtmlTable 
+                                                                data={sampleData} 
+                                                                csvDelimiter="," 
+                                                                tableClassName="table table-dark"
+                                                            />
+                                                        </ModalBody>
+                                                        <ModalFooter>
+                                                            <button onClick={this.toggleModal(2)}>close</button>
+                                                        </ModalFooter>     
                                                         
                                                         
                                                     </ModalDialog>
+                                                    
+
+                                                </Modal>
+                                                    
                                                 </div>
                                             </ListGroupItem>
                                         </ListGroup>

@@ -1,4 +1,9 @@
 import React from 'react';
+import Admin from "layouts/Admin.jsx";
+import routes from "routes/routes.js";
+
+// content items
+import Contents from 'views/Content.jsx';
 
 // reactstrap components
 import { Card,CardDeck, CardHeader,CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
@@ -35,7 +40,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a href="content">
+                                    <a href="/">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
@@ -64,7 +69,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a to="#">
+                                    <a href="#">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
@@ -93,7 +98,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a to="#">
+                                    <a href="#">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
@@ -122,7 +127,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a to="#">
+                                    <a href="#">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
@@ -151,7 +156,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a to="#">
+                                    <a href="#">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
@@ -180,7 +185,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter>
                                 <button className="button button-primary">
-                                    <a to="#">
+                                    <a href="#">
                                     <i className="fa fa-chevron-right"></i>
                                     Find out more
                                     </a>
