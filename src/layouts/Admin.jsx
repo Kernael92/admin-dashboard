@@ -7,7 +7,7 @@ import PerfectScrollbar from "perfect-scrollbar";
 import AdminNavbar from "components/Navbars/AdminNavbar.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 import routes from "routes/routes.js";
-import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
+// import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import logo from '../logo.svg';
 
@@ -123,10 +123,10 @@ class Admin extends React.Component {
             
           </div>
         </div>
-        <FixedPlugin
+        {/* <FixedPlugin
           bgColor={this.state.backgroundColor}
           handleBgClick={this.handleBgClick}
-        />
+        /> */}
       </>
     );
   }
