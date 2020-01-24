@@ -13,6 +13,7 @@
     "@fortawesome/react-native-fontawesome": "^0.1.0",
     "@kunukn/react-collapse": "^2.2.7",
     "@material-ui/core": "^4.9.0",
+    "@material-ui/icons": "^4.5.1",
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
@@ -87,7 +88,6 @@
     "sass-loader": "7.2.0",
     "semver": "6.3.0",
     "style-loader": "1.0.0",
-    "terser-webpack-plugin": "1.4.1",
     "ts-pnp": "1.1.4",
     "url-loader": "2.1.0",
     "use-react-modal": "0.0.9",
@@ -169,5 +169,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "terser-webpack-plugin": "^1.4.1"
   }
 }
